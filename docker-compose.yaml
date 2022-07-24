@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  controlnode:
+    build:
+      context: Dockerfiles/controlnode/
+    working_dir: /playbook
+    user: 'root'
+    command: 'tail -f /dev/null'
+    volumes:
+      - ./playbooks:/playbook
