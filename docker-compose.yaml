@@ -8,4 +8,13 @@ services:
     user: 'root'
     command: 'tail -f /dev/null'
     volumes:
+      - ./secrets:/secrets
       - ./playbooks:/playbook
+    hostname: master
+  centos:
+    build:
+      context: Dockerfiles/centos/
+    restart: unless-stopped
+    ports:
+      - 4001:4000
+    hostname: slave
