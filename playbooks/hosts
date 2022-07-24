@@ -1,0 +1,1 @@
+slave  ansible_host=slave ansible_connection=ssh
